@@ -26,45 +26,60 @@ for i in niz:
         ime += nastavak
         if datum.hour >=10 and datum.hour < 12:
             vezbe = True
-        else:
+        elif datum.hour >=12 and datum.hour < 14:
             vezbe = False
+        else:
+            continue
     elif dan_u_nedelji == 2:
         nastavak = 'Softversko inzenjerstvo' 
         ime += nastavak
         if datum.hour >=10 and datum.hour < 12:
             vezbe = True
-        else:
+        elif datum.hour >=12 and datum.hour < 14:
             vezbe = False
+        else:
+            continue
     elif dan_u_nedelji == 3:
         nastavak = 'Mikroracunarski sistemi' 
         ime += nastavak
         if datum.hour >=10 and datum.hour < 12:
             vezbe = False
-        else:
+        elif datum.hour >=12 and datum.hour < 14:
             vezbe = True
+        else:
+            continue
     elif dan_u_nedelji == 4:
         nastavak = 'Informacioni sistemi' 
         ime += nastavak
         if datum.hour >=10 and datum.hour < 12:
             vezbe = True
-        else:
+        elif datum.hour >=12 and datum.hour < 14:
             vezbe = False
+        else:
+            continue
     elif dan_u_nedelji == 5:
         nastavak = 'Projektovanje i analiza algoritama' 
         ime += nastavak
         if datum.hour >=10 and datum.hour < 12:
             vezbe = False
-        else:
+        elif datum.hour >=12 and datum.hour < 14:
             vezbe = True
+        else:
+            continue
 
+    direktorijum = ''
  
     if vezbe:
         ime += ' vezbe'
+        direktorijum = 'Vezbe'
     else:
         ime += ' predavanja'
+        direktorijum = 'Predavanja'
 
-    podfajl_niz = os.listdir(os.getcwd()+'/'+nastavak)
+    podfajl_niz = os.listdir(os.getcwd()+'/'+nastavak+'/'+direktorijum)
 
+    #podfajl_niz.remove('Vezbe')
+    #podfajl_niz.remove('Predavanja')
     pom_niz = [f[4:] for f in podfajl_niz]
     if ime in pom_niz:
         continue
@@ -81,9 +96,7 @@ for i in niz:
         ime = '01. ' + ime
 
     #os.rename(i, ime)
-    shutil.copy(os.getcwd() + '/' + i, os.getcwd()+'/'+nastavak)
-    os.rename('./'+nastavak+'/'+i, './'+nastavak+'/'+ime)
-
+    shutil.move(os.getcwd() + '/' + i, os.getcwd()+'/'+nastavak+'/'+direktorijum+'/'+ime)
 
 
 
