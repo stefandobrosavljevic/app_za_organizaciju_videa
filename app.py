@@ -59,7 +59,7 @@ for i in niz:
         else:
             continue
     elif dan_u_nedelji == 5:
-        nastavak = 'Projektovanje i analiza algoritama' 
+        nastavak = 'PiAA' 
         ime += nastavak
         if datum.hour >=10 and datum.hour < 12:
             vezbe = False
