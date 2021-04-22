@@ -10,9 +10,10 @@ for i in niz:
     if i == 'a.py' or i == 'b.py':
         continue
     podniz = i.split(' ')
+    ekstenzija = podniz[1][8:]
+    podniz[1] = podniz[1][:8]
     datum = datetime.strptime(podniz[0] + ' ' + podniz[1], '%Y.%m.%d %H-%M-%S')
     datum_za_ime = podniz[0]
-    #print(datum_za_ime)
     niz_datum = datum_za_ime.split('.')
     ime = niz_datum[2] + '.' + niz_datum[1] + '.' + niz_datum[0] + ' '
 
