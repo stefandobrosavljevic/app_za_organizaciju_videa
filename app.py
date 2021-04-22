@@ -97,7 +97,7 @@ for i in niz:
         ime = '01. ' + ime
 
     #os.rename(i, ime)
-    shutil.move(os.getcwd() + '/' + i, os.getcwd()+'/'+nastavak+'/'+direktorijum+'/'+ime)
+    shutil.move(os.getcwd() + '/' + i, os.getcwd()+'/'+nastavak+'/'+direktorijum+'/'+ime+ekstenzija)
 
 
 
